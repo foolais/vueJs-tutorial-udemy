@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 90%;
+  background-color: #4fc08d;
+  color: white;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#styling {
+  width: 90%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.26);
+  border: 1px solid #ccc;
+  margin: 2rem auto;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+#styling .demo {
+  border: 2px dashed #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#styling .demo.active {
+  background-color: #4fc08d;
+  border: none;
+}

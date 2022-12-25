@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <div
+        class="demo"
+        :style="{borderColor: boxASelected ? '#4fc08d' : '#ccc'}"
+        @click="boxSelected('A')"
+      ></div>
+      <div
+        class="demo"
+        :class="{active: boxBSelected}"
+        @click="boxSelected('B')"
+      ></div>
+      <!-- Computed Class -->
+      <div class="demo" :class="boxCClass" @click="boxSelected('C')"></div>
+      <!-- Array Class -->
+      <div
+        :class="['demo', {active: boxDSelected}]"
+        @click="boxSelected('D')"
+      ></div>
+    </section>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</html>
