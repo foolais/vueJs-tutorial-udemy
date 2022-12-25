@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Event</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Actions</h2>
+      <button v-on:click="increment(10)">Add</button>
+      <button v-on:click="decrement(5)">Subtract</button>
+      <p v-once>Starting Counter : {{counter}}</p>
+      <p>Result : {{counter}}</p>
+      <input
+        type="text"
+        placeholder="type name"
+        v-on:input="setName($event, 'saya')"
+        v-on:keyup.enter="confirmInputName"
+      />
+      <p>Your Name : {{confirmedName}}</p>
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
+        <button>Login</button>
+      </form>
+    </section>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</html>
