@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Behind The Scene</h1>
+    </header>
+    <div id="main">
+      <div class="container">
+        <h2>How Vue Works</h2>
+        <input type="text" @input="setInput" />
+        <input type="text" ref="userText" />
+        <button @click="setMessage">Set</button>
+        <p>{{message}}</p>
+        <p>{{messageTwo}}</p>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</html>
