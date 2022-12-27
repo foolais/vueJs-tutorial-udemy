@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 90%;
+  background-color: #4fc08d;
+  color: white;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#main .container {
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.26);
+  border: 1px solid#ccc;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+#main .health-bar {
+  background-color: #4fc08d;
+  padding: 1rem;
+  border: 2px solid #4fc08d;
+}
+
+#control {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  background-color: crimson;
+  color: white;
+  max-width: max-content;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+#control button:disabled {
+  cursor: default;
+  background-color: cornsilk;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 0.25rem;
+}

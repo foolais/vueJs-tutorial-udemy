@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Monster Slayer</h1>
+    </header>
+    <section id="main">
+      <div class="container">
+        <h2>Player Health</h2>
+        <div class="health-bar" :style="playerBarStyles"></div>
+      </div>
+      <div class="container">
+        <h2>Monster Health</h2>
+        <div class="health-bar" :style="monsterBarStyles"></div>
+      </div>
+      <div class="container" v-if="winner">
+        <h2>Game Over</h2>
+        <h3 v-if="winner === 'monster'">You Lost!</h3>
+        <h3 v-else-if="winner === 'player'">You Won!</h3>
+        <h3 v-else>Draw!</h3>
+        <button @click="startNewGame">Start new game</button>
+      </div>
+      <div id="control" v-else>
+        <button @click="attackMonster">Attack</button>
+        <button @click="specialAttack" :disabled="mayUseSpecialAttack">
+          Special Attack
+        </button>
+        <button @click="healPlayer">Heal</button>
+        <button @click="surrender">Surrender</button>
+      </div>
+      <div class="container">
+        <div>
+          <h2>Battle Log</h2>
+          <ul>
+            <li v-for="(log, index,) in battleLog" :key="index">
+              <span>{{log.actionBy}} - </span>
+              <span>{{log.actionType}} - </span>
+              <span>{{log.actionValue}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</html>
