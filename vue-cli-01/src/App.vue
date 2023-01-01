@@ -3,9 +3,12 @@
     <div class="header">
       <h1>Tes</h1>
     </div>
-    <ul>
-      <friend-contact />
-      <friend-contact />
+    <ul v-for="friend in friends" :key="friend.id">
+      <friend-contact
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email="friend.email"
+      />
     </ul>
   </div>
 </template>
