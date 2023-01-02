@@ -5,11 +5,18 @@
     </div>
     <ul v-for="friend in friends" :key="friend.id">
       <friend-contact
+        :id="friend.id"
         :name="friend.name"
         :phone-number="friend.phone"
         :email="friend.email"
+        :is-favorite="friend.favorite"
+        @toogle-favorite="toogleFavoriteStatus"
       />
     </ul>
+  </div>
+  <div class="container">
+    <h2>Add New</h2>
+    <new-friend @add-contact="addContact" />
   </div>
 </template>
 
@@ -23,15 +30,33 @@ export default {
           name: "Manuel Lorenz",
           phone: "0123 4567 90",
           email: "manuel@gmail.com",
+          favorite: false,
         },
         {
           id: "julie",
           name: "Julie Jones",
           phone: "0123 4567 10",
           email: "julie@gmail.com",
+          favorite: true,
         },
       ],
     };
+  },
+  methods: {
+    toogleFavoriteStatus(friendId) {
+      const identified = this.friends.find((friend) => friend.id === friendId);
+      identified.favorite = !identified.favorite;
+    },
+    addContact(item) {
+      const newFriendContact = {
+        id: new Date().toString(),
+        name: item.enteredName,
+        phone: item.enteredPhone,
+        email: item.enteredEmail,
+        favorite: false,
+      };
+      this.friends.push(newFriendContact);
+    },
   },
 };
 </script>
